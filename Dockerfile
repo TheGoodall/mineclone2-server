@@ -6,3 +6,5 @@ RUN unzip mineclone.zip
 FROM  warr1024/minetestserver
 COPY  --from=unzipper /mineclone2 /app/minetest/games/mineclone2/
 
+EXPOSE 30000/udp
+ENTRYPOINT [ "/bin/sh", "/app/entry.sh", "--gameid", "mineclone2" ]
